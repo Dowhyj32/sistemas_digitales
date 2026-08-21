@@ -3,5 +3,7 @@ module inversor_cond (
     input  logic       ctrl,
     output logic [3:0] y
 );
-  // completar
+  
+  assign y = ctrl ? ~x : x;
+
 endmodule
