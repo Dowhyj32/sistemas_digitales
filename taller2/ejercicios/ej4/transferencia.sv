@@ -15,4 +15,39 @@ module transferencia (
 );
   // bus y cuatro registro_4b
   // force_en=1 → bus=force_in; si no, src elige r0/r1/r2/r3
+
+  logic [3:0] next_d;    
+
+  registro_4b R0 (
+    .clk(clk),
+    .rst(rst),
+    .we (we0),
+    .din(din),
+    .q  (q)
+  );
+
+  registro_4b R1 (
+    .clk(clk),
+    .rst(rst),
+    .we (we1),
+    .din(din),
+    .q  (q)
+  );
+
+  registro_4b R2 (
+    .clk(clk),
+    .rst(rst),
+    .we (we2),
+    .din(din),
+    .q  (q)
+  );
+
+  registro_4b R3 (
+    .clk(clk),
+    .rst(rst),
+    .we (we3),
+    .din(din),
+    .q  (q)
+  );
+
 endmodule
