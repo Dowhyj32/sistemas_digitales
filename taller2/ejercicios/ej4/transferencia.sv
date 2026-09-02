@@ -18,25 +18,7 @@ module transferencia (
 
   logic [3:0] bus;
 
-  always_comb begin
-    
-    if (force_en) begin
-      bus = force_in;
-    end
-
-    else begin
-      
-      case (src)
-        2'b00:bus = r0;
-        2'b01:bus = r1;
-        2'b10:bus = r2;
-        2'b11:bus = r3;
-         
-      endcase
-
-    end
-
-  end   
+  assign bus = force_en ? force_in : src == 2'b00 ? r0 : src == 2'b01 ? r1 : src == 2'b10 ? r2 : r3; 
 
   registro_4b R0 (
     .clk(clk),
