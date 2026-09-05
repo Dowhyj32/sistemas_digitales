@@ -4,4 +4,7 @@ module compuerta_or_4b (
     output logic [3:0] result
 );
   // Completar: OR bit a bit entre a y b.
+
+  assign result = a | b;
+  
 endmodule
