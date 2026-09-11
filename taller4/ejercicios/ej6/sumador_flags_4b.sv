@@ -15,7 +15,6 @@ module sumador_flags_4b (
     .cout(carry)
   );
 
-
   overflow_4b overflow_4b (
     .a       (a),
     .b       (b),
