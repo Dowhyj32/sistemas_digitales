@@ -4,4 +4,16 @@ module contador_posicion (
     output logic [1:0] posicion
 );
   // COMPLETAR: contador saturado entre 0 (cerrado) y 3 (abierto).
+
+  always_ff @(posedge clk or posedge rst) begin
+    if (subir) begin
+      posicion += 2'b01;
+    end
+
+    else if (bajar) begin
+      posicion -= 2'b01;
+    end
+
+  end
+
 endmodule
