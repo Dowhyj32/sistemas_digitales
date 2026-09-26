@@ -45,19 +45,19 @@ module fsm (
 
         case (present_state)
             IDLE: begin
-                // COMPLETAR: próximo estado
+                if (start) next_state = FETCH_OPS;
             end
 
             FETCH_OPS: begin
-                // COMPLETAR: próximo estado
+                next_state = EXECUTE;
             end
 
             EXECUTE: begin
-                // COMPLETAR: próximo estado
+                next_state = WRITEBACK;
             end
 
             WRITEBACK: begin
-                // COMPLETAR: próximo estado
+                next_state = IDLE;
             end
 
             default: begin
@@ -75,19 +75,31 @@ module fsm (
 
         case (present_state)
             IDLE: begin
-                // COMPLETAR: salidas
+                ready      = 1'b1;
+                done       = 1'b0;
+                capture_en = start;
+                rf_we      = 1'b0;
             end
 
             FETCH_OPS: begin
-                // COMPLETAR: salidas
+                ready      = 1'b0;
+                done       = 1'b0;
+                capture_en = 1'b0;
+                rf_we      = 1'b0;
             end
 
             EXECUTE: begin
-                // COMPLETAR: salidas
+                ready      = 1'b0;
+                done       = 1'b0;
+                capture_en = 1'b0;
+                rf_we      = 1'b0;
             end
 
             WRITEBACK: begin
-                // COMPLETAR: salidas
+                ready      = 1'b0;
+                done       = 1'b1;
+                capture_en = 1'b0;
+                rf_we      = 1'b1;
             end
 
             default: begin
