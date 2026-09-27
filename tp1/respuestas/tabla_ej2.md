@@ -43,3 +43,6 @@ always_ff @(posedge clk or posedge rst) begin
     end
 end
 ```
+
+Podemos apreciar esto en el diagrama de tiempos
+![Diagrama de tiempos](img/ej2_surfer.png)
