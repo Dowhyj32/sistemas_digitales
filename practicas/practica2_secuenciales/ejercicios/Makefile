@@ -1,5 +1,5 @@
 # Agregá una línea por cada ejercicio (ej: $(MAKE) -C ej1 sim)
-EJS = ej5
+EJS = ej5 ej6
 
 .PHONY: sim clean
 
